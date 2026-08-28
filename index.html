@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, My Love 💕</title>
+  <meta name="description" content="A cinematic birthday experience crafted with love." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CINEMATIC INTRO OVERLAY
+       ============================================================ -->
+  <div id="cinematic-intro" aria-hidden="true">
+    <div class="intro-petals"></div>
+    <div class="intro-logo" id="intro-logo">
+      <p class="intro-tagline">✦ A love story written just for you ✦</p>
+      <div class="intro-line"></div>
+      <h1 class="intro-logo-text">Happy Birthday</h1>
+      <div class="intro-line"></div>
+      <p class="intro-tagline">Every moment with you is a gift</p>
+    </div>
+  </div>
+
+  <!-- ── PARTICLE CANVAS BACKGROUND ── -->
+  <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── FLOATING HEARTS / PETALS ── -->
+  <div id="hearts-container" aria-hidden="true"></div>
+
+  <!-- ── BACKGROUND MUSIC ── -->
+  <audio id="bg-audio" loop preload="none">
+    <source src="music/romantic.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ── FLOATING MUSIC PLAYER ── -->
+  <div id="music-player" role="region" aria-label="Music Player">
+    <button id="music-btn" aria-label="Play/Pause music">▶</button>
+    <div class="music-info">
+      <span class="music-title">Our Song</span>
+      <span class="music-sub">Add your track to /music/romantic.mp3</span>
+    </div>
+    <div class="music-eq paused" aria-hidden="true">
+      <div class="eq-bar"></div><div class="eq-bar"></div>
+      <div class="eq-bar"></div><div class="eq-bar"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN SITE WRAPPER
+       ============================================================ -->
+  <div id="site-wrapper">
+
+    <!-- ── NAVIGATION ── -->
+    <nav id="nav" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo">Our Story</a>
+      <ul class="nav-links">
+        <li><a href="#timeline">Story</a></li>
+        <li><a href="#cube-section">Memories</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#love-letter">Letter</a></li>
+      </ul>
+      <div class="nav-hamburger" id="nav-hamburger" role="button" aria-label="Toggle menu" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section id="hero">
+      <p class="hero-eyebrow">🌸 A Cinematic Love Story 🌸</p>
+
+      <h1 class="hero-title">Happy Birthday,<br>My Everything</h1>
+
+      <p class="hero-subtitle">You are the poem I never knew how to write</p>
+
+      <p class="hero-message">
+        Every heartbeat, every moment, every single breath —
+        all of it finds its meaning in you. Today, the universe
+        celebrates the wonderful day you came into this world.
+      </p>
+
+      <div class="hero-date-badge">
+        🌹 &nbsp; This Day Was Made For You &nbsp; 🌹
+      </div>
+
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="document.getElementById('music-btn').click()">
+          ♪ &nbsp; Play Our Song
+        </button>
+        <a href="#timeline" class="btn btn-outline">Our Story →</a>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <div class="scroll-mouse"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         PARALLAX SECTION 1
+         ============================================================ -->
+    <div class="parallax-section" style="min-height:360px;">
+      <div class="parallax-bg" style="background: linear-gradient(135deg, #fde8ee 0%, #fef0eb 40%, #f5edfb 100%);"></div>
+      <div class="parallax-overlay" style="background: linear-gradient(135deg, rgba(255,248,244,0.4), rgba(248,220,235,0.4));"></div>
+      <div class="parallax-content">
+        <p class="parallax-quote">
+          "In all the world, there is no heart for me like yours.<br>
+          In all the world, there is no love for you like mine."
+        </p>
+        <p class="parallax-author">— Maya Angelou</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         LOVE STORY TIMELINE
+         ============================================================ -->
+    <section id="timeline">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">Chapter One</p>
+          <h2 class="section-title">Our Love Story</h2>
+          <p class="section-sub">Every great story has a beginning. Ours began with a moment that changed everything.</p>
+        </div>
+
+        <div class="timeline-track">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-emoji">✨</span>
+              <p class="timeline-date">Chapter 1 — The Beginning</p>
+              <h3 class="timeline-event">The Day We First Met</h3>
+              <p class="timeline-desc">The universe conspired to bring two souls together. One smile was all it took to know that something extraordinary had just begun.</p>
+            </div>
+            <div class="timeline-spacer"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-spacer"></div>
+            <div class="timeline-card">
+              <span class="timeline-emoji">🌹</span>
+              <p class="timeline-date">Chapter 2 — Falling</p>
+              <h3 class="timeline-event">Our First Date</h3>
+              <p class="timeline-desc">Time stood still. Laughter filled the air. By the end of that evening, I knew — this was the beginning of forever.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-emoji">🌍</span>
+              <p class="timeline-date">Chapter 3 — Adventure</p>
+              <h3 class="timeline-event">Our First Trip Together</h3>
+              <p class="timeline-desc">We explored the world side by side — and I realized that every destination is beautiful when you are beside me.</p>
+            </div>
+            <div class="timeline-spacer"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-spacer"></div>
+            <div class="timeline-card">
+              <span class="timeline-emoji">💫</span>
+              <p class="timeline-date">Chapter 4 — Deep Love</p>
+              <h3 class="timeline-event">When I Knew It Was Forever</h3>
+              <p class="timeline-desc">In a quiet, ordinary moment, I looked at you and felt everything. No words were needed. My heart simply knew — you are my forever.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-emoji">🎂</span>
+              <p class="timeline-date">Chapter 5 — Today</p>
+              <h3 class="timeline-event">Your Birthday 🎉</h3>
+              <p class="timeline-desc">Today we celebrate the most wonderful person in my world. Every day with you is a gift, but today — today is magical. Happy Birthday, my love.</p>
+            </div>
+            <div class="timeline-spacer"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         PARALLAX SECTION 2
+         ============================================================ -->
+    <div class="parallax-section" style="min-height:340px;">
+      <div class="parallax-bg" style="background: linear-gradient(135deg, #fef6e4 0%, #fde8ee 50%, #f5edfb 100%);"></div>
+      <div class="parallax-overlay" style="background: linear-gradient(135deg, rgba(255,248,244,0.35), rgba(255,235,240,0.35));"></div>
+      <div class="parallax-content">
+        <p class="parallax-quote">"You are my today and all of my tomorrows."</p>
+        <p class="parallax-author">— Leo Christopher</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         3D ROTATING PHOTO CUBE
+         ============================================================ -->
+    <section id="cube-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">Our Memories</p>
+          <h2 class="section-title">A Cube of Love</h2>
+          <p class="section-sub">Every face holds a moment. Every moment holds forever. Hover to pause.</p>
+        </div>
+
+        <div class="cube-stage">
+          <div class="cube-glow"></div>
+          <div class="cube">
+            <div class="cube-face front">
+              <img src="images/photo1.jpg" alt="Our memory 1" loading="lazy" />
+            </div>
+            <div class="cube-face back">
+              <img src="images/photo2.jpg" alt="Our memory 2" loading="lazy" />
+            </div>
+            <div class="cube-face right">
+              <img src="images/photo3.jpg" alt="Our memory 3" loading="lazy" />
+            </div>
+            <div class="cube-face left">
+              <img src="images/photo4.jpg" alt="Our memory 4" loading="lazy" />
+            </div>
+            <div class="cube-face top">
+              <img src="images/photo5.jpg" alt="Our memory 5" loading="lazy" />
+            </div>
+            <div class="cube-face bottom">
+              <img src="images/photo6.jpg" alt="Our memory 6" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal" style="text-align:center;color:var(--text-muted);font-size:0.78rem;letter-spacing:0.1em;">
+          Replace images in /images/ with your real photos 📸
+        </p>
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         PHOTO GALLERY — 15 SLOTS
+         ============================================================ -->
+    <section id="gallery">
+      <div class="section-header reveal container">
+        <p class="section-label">Gallery</p>
+        <h2 class="section-title">Our Favourite Moments</h2>
+        <p class="section-sub">Fifteen memories, one love story. These ones hold our whole world.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- Slot 1 — large feature (spans 2×2) -->
+        <div class="gallery-item">
+          <img src="images/photo1.jpg" alt="Memory 1" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+
+        <!-- Slots 2–7 -->
+        <div class="gallery-item">
+          <img src="images/photo2.jpg" alt="Memory 2" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo3.jpg" alt="Memory 3" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo4.jpg" alt="Memory 4" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo5.jpg" alt="Memory 5" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo6.jpg" alt="Memory 6" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo7.jpg" alt="Memory 7" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+
+        <!-- Slot 8 — wide -->
+        <div class="gallery-item">
+          <img src="images/photo8.jpg" alt="Memory 8" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+
+        <!-- Slots 9–12 -->
+        <div class="gallery-item">
+          <img src="images/photo9.jpg" alt="Memory 9" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo10.jpg" alt="Memory 10" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo11.jpg" alt="Memory 11" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo12.jpg" alt="Memory 12" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+
+        <!-- Slot 13 — wide -->
+        <div class="gallery-item">
+          <img src="images/photo13.jpg" alt="Memory 13" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+
+        <!-- Slots 14–15 -->
+        <div class="gallery-item">
+          <img src="images/photo14.jpg" alt="Memory 14" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/photo15.jpg" alt="Memory 15" loading="lazy" />
+          <div class="gallery-item-overlay"><div class="gallery-zoom-icon">⊕</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <div class="modal-img-wrap">
+        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+        <img id="modal-img" src="" alt="Gallery photo" />
+        <button class="modal-nav prev" id="modal-prev" aria-label="Previous">‹</button>
+        <button class="modal-nav next" id="modal-next" aria-label="Next">›</button>
+        <p class="modal-counter" id="modal-counter">1 / 15</p>
+      </div>
+    </div>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         PARALLAX SECTION 3
+         ============================================================ -->
+    <div class="parallax-section" style="min-height:320px;">
+      <div class="parallax-bg" style="background: linear-gradient(135deg, #fef0f5 0%, #fef6e4 50%, #f0f5ff 100%);"></div>
+      <div class="parallax-overlay" style="background: linear-gradient(135deg, rgba(255,240,245,0.4), rgba(255,246,228,0.4));"></div>
+      <div class="parallax-content">
+        <p class="parallax-quote">"I have found the one whom my soul loves."</p>
+        <p class="parallax-author">— Song of Solomon 3:4</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TYPEWRITER LOVE LETTER
+         ============================================================ -->
+    <section id="love-letter">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-label">From the Heart</p>
+          <h2 class="section-title">A Letter For You</h2>
+          <p class="section-sub">Some feelings are too big for ordinary words. These ones are just for you.</p>
+        </div>
+
+        <div class="letter-card reveal">
+          <h3 class="letter-heading">My Dearest Love,</h3>
+          <div id="typewriter-text"></div>
+          <p class="letter-signature">Yours, Always 💕</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer id="footer">
+      <div class="footer-logo">Our Love Story</div>
+      <div class="footer-hearts">🌸 💕 🌸</div>
+      <p class="footer-tagline">Made with every petal in the garden — just for you</p>
+      <p class="footer-copy">Press <kbd style="background:var(--rose-pale);color:var(--rose);border-radius:4px;padding:1px 6px;border:1px solid var(--border-soft);">M</kbd> to toggle music &nbsp;•&nbsp; Add your songs &amp; photos to personalise</p>
+    </footer>
+
+  </div><!-- /#site-wrapper -->
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
